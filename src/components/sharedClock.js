@@ -26,16 +26,26 @@ class Clock extends Component {
   }
 
   componentDidMount() {
+    this.initializeStateFromUrl();
+    this.startTimer();
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerId);
+  }
+
+  initializeStateFromUrl() {
     const urlParams = new URLSearchParams(window.location.search);
-    const time = urlParams.get('time');
-    const speed = urlParams.get('speed');
+    const timeParam = urlParams.get('time');
+    const speedParam = urlParams.get('speed');
 
-    console.log('Time from URL:', time);
-    console.log('Speed from URL:', speed);
+    const time = timeParam ? new Date(timeParam) : new Date();
+    const speed = speedParam ? Number(speedParam) : 1;
 
-    if (time) this.setState({ time: new Date(time), targetTime: new Date(time) });
-    if (speed) this.setState({ value: Number(speed) });
+    this.setState({ time, targetTime: time, value: speed });
+  }
 
+  startTimer() {
     this.timerId = setInterval(() => {
       const { targetTime, value } = this.state;
       const timeDiffInMinutes = Math.floor((targetTime - this.state.time) / (1000 * 60));
@@ -51,10 +61,6 @@ class Clock extends Component {
         clearInterval(this.timerId); // Stop timer when target time is reached
       }
     }, 1000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.timerId);
   }
 
   handleChange = (e) => {
