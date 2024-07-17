@@ -1,0 +1,306 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap");
+.App {
+  font-family: sans-serif;
+}
+
+
+.clock {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.2);
+  font-size: 24px;
+  color: #444;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.clock::after {
+  background: #aaa;
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid #fff;
+}
+
+.hour_hand {
+  position: absolute;
+  width: 6px;
+  height: 60px;
+  background: #222;
+  top: 30%;
+  left: 49%;
+  transform-origin: bottom;
+  border-color: white;
+  border-width: 1px;
+}
+
+.min_hand {
+  position: absolute;
+  width: 4px;
+  height: 80px;
+  background: #444;
+  top: 22.5%;
+  left: 49%;
+  transform-origin: bottom;
+  border-color: white;
+  border-width: 1px;
+}
+
+.sec_hand {
+  position: absolute;
+  width: 2px;
+  height: 118px;
+  background: red;
+  top: 10.5%;
+  left: 50%;
+  transform-origin: bottom;
+}
+
+.clock span {
+  position: absolute;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 700;
+}
+
+.twelve {
+  top: 10px;
+  left: 46%;
+}
+
+.one {
+  top: 10%;
+  right: 26%;
+}
+
+.eleven {
+  top: 10%;
+  left: 26%;
+}
+
+.two {
+  top: 25%;
+  right: 10%;
+}
+
+.three {
+  right: 10px;
+  top: 46%;
+}
+
+.four {
+  right: 30px;
+  top: 67%;
+}
+
+.five {
+  right: 78px;
+  top: 80%;
+}
+
+.six {
+  bottom: 10px;
+  left: 50%;
+}
+
+.seven {
+  left: 80px;
+  top: 82%;
+}
+
+.eight {
+  left: 30px;
+  top: 67%;
+}
+
+.nine {
+  left: 10px;
+  top: 46%;
+}
+
+.ten {
+  top: 25%;
+  left: 10%;
+}
+
+.range {
+    position:relative ;
+    margin-top: 400px;
+   
+    
+    
+}
+.range .range-slide {
+    position: absolute;
+    width: 100%;
+    background: transparent;
+    appearance: none;
+    left: 0;
+    top: -3px;
+    z-index: 9;
+    outline: none;
+    opacity: 0;
+}
+.range .range-slide::-ms-expand {
+    display: none;
+}
+.range .range-slide::-ms-clear {
+    display: none;
+}
+.range .range-slide::-webkit-slider-thumb {
+    width: 35px;
+    height: 35px;
+    margin: -3px 0 0 -3px;
+    cursor: pointer;
+    appearance: none;
+}
+.range .circle {
+    position: absolute;
+    top: -8px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.07);
+    border: solid 2px #dbdbdb;
+    background: white;
+    display: inline-block;
+    transition: 0.2s;
+}
+.range .range-value {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 20%;
+    height: 20px;
+    background: #FE8C00;
+    border-radius: 10px 0 0 10px;
+    transition: 0.2s;
+}
+.range::after {
+    content: "";
+    width: 100%;
+    height: 20px;
+    border-radius: 10px;
+    background: #f2f4f4;
+    display: block;
+}
+.range::before {
+    position: absolute;
+    top: 5px;
+    right: 6px;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #d8d8d8;
+    border-radius: 50%;
+    content: "";
+}
+.range .bullet {
+    position: absolute;
+    top: 5px;
+    right: 20%;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #d8d8d8;
+    border-radius: 50%;
+}
+.range .bullet-1 {
+    position: absolute;
+    top: 5px;
+    right: 40%;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #d8d8d8;
+    border-radius: 50%;
+}
+.range .bullet-2 {
+    position: absolute;
+    top: 5px;
+    right: 60%;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #d8d8d8;
+    border-radius: 50%;
+}
+.range .bullet-3 {
+    position: absolute;
+    top: 5px;
+    right: 80%;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #d8d8d8;
+    border-radius: 50%;
+}
+.container {
+    padding: 50px;
+    text-align: center;
+}
+.container h1 {
+    margin: 0 0 40px;
+}
+
+/* Dark mode styles */
+.dark-mode .clock {
+  color: #ccc;
+  box-shadow: 0 2px 30px rgba(249, 248, 248, 0.2);
+}
+
+.dark-mode .clock::after {
+  background: #555;
+}
+
+.dark-mode .hour_hand {
+  background: #FE8C00;
+  top: 30%;
+  left: 49%;
+}
+
+.dark-mode .min_hand {
+  background: #FE8C00;
+  top: 22.5%;
+  left: 49%;
+}
+
+.dark-mode .sec_hand {
+  background: white;
+  top: 10.5%;
+  left: 50%;
+}
+
+.dark-mode .range-value {
+  background: #ff8c00;
+}
+
+.dark-mode .range.circle{
+  box-shadow: 0 2px 6px 0 rgba(252, 251, 251, 0.07);
+}
+.dark-mode .range::after {
+  background: #333;
+}
+
+.dark-mode .range::before {
+  background: #666;
+}
+.dark-mode, .twelve, .eleven, .ten, .nine, .eight, .seven, .six, .five, .four, .three, .two, .one{
+  color: #FE8C00;
+}
+
+.dark-mode .bullet, .dark-mode .bullet-1, .dark-mode .bullet-2, .dark-mode .bullet-3 {
+  background: #666;
+}
+

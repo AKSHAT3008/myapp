@@ -1,0 +1,15 @@
+{
+    "builds": [
+      {
+        "src": "package.json",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "build"
+        }
+      }
+    ],
+    "scripts": {
+      "build": "npm run prebuild && npm run build"
+    }
+}
+  
