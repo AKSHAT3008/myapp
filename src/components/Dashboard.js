@@ -26,7 +26,7 @@ export default function Dashboard() {
         {error && <Alert variant = "danger">{error}</Alert>}
         <strong>Email: </strong>{currentUser.email}
         
-        <Link to="/update-profile" className = "btn btn-primary w-100 mt-3" style={{backgroundColor:"#FE8C00", borderColor:'transparent'}}>Update Profile</Link>
+        
         <div className='text-center'> 
         <Button variant="link" onClick={handleLogout} style={{ color:'#FE8C00',textDecoration: 'none', fontFamily:'sans-serif', fontWeight:'400', fontSize:'16px' }}>LogOut</Button>
       </div>
